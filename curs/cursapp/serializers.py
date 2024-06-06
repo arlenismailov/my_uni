@@ -1,3 +1,5 @@
+from .models import Focultet, Professor, Student, Course, Office, Schedule, Registrationcourse, Homework, Passingexam
+from rest_framework import serializers
 
 class FocultetSerializer(serializers.ModelSerializer):
 	class Meta:

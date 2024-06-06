@@ -1,4 +1,11 @@
 from django.shortcuts import render
+from rest_framework import viewsets
+
+from .models import Focultet, Professor, Student, Course, Office, Schedule, Registrationcourse, Homework, Passingexam
+from .serializers import FocultetSerializer, ProfessorSerializer, StudentSerializer, CourseSerializer, OfficeSerializer, ScheduleSerializer, RegistrationcourseSerializer, HomeworkSerializer, Passingexam
+
+
+
 class FocultetViewSets(viewsets.ModelViewSet):
 	queryset = Focultet.objects.all()
 	serializer_class = FocultetSerializer

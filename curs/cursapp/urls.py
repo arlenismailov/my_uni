@@ -1,4 +1,10 @@
+from .views import (FocultetViewSets, ProfessorViewSets, StudentViewSets, CourseViewSets,
+					OfficeViewSets, ScheduleViewSets, RegistrationcourseViewSets,
+					HomeworkViewSets, Passingexam)
+
+
 urlpatterns = [
+
 	 path('focultet/', FocultetViewSets.as_view({'get': 'list', 'post': 'create'}),
 		name='focultet_list'),
 	 path('focultet/<int:pk>/', FocultetViewSets.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
