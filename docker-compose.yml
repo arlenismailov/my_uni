@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  postgres:
+    build: ./docker/postgres/
+    env_file:
+      - ./curs/.env
+    container_name: UNI_PGDB
+    volumes:
+      - ./docker/postgres/pg_data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+
+  # Сервис для Django приложения
+  django:
+    build: ./curs/
+    container_name: UNI_DJANGO
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./curs/:/web/
+    command: >
+      bash -c "python ./manage.py runserver 0.0.0.0:8000"
+    env_file:
+      - ./curs/.env
+    depends_on:
+      - postgres  
+
