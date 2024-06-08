@@ -1,14 +1,33 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 
-from .models import Focultet, Professor, Student, Course, Office, Schedule, Registrationcourse, Homework, Passingexam
-from .serializers import FocultetSerializer, ProfessorSerializer, StudentSerializer, CourseSerializer, OfficeSerializer, \
-    ScheduleSerializer, RegistrationcourseSerializer, HomeworkSerializer, PassingexamSerializer
+from .models import (
+    Department,
+    Professor,
+    Student,
+    Course,
+    Office,
+    Schedule,
+    RegistrationCourse,
+    Homework,
+    PassingExam,
+)
+from .serializers import (
+    DepartmentSerializer,
+    ProfessorSerializer,
+    StudentSerializer,
+    CourseSerializer,
+    OfficeSerializer,
+    ScheduleSerializer,
+    RegistrationCourseSerializer,
+    HomeworkSerializer,
+    PassingExamSerializer,
+)
 
 
-class FocultetViewSets(viewsets.ModelViewSet):
-    queryset = Focultet.objects.all()
-    serializer_class = FocultetSerializer
+class DepartmentViewSets(viewsets.ModelViewSet):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
 
 
 class ProfessorViewSets(viewsets.ModelViewSet):
@@ -36,9 +55,9 @@ class ScheduleViewSets(viewsets.ModelViewSet):
     serializer_class = ScheduleSerializer
 
 
-class RegistrationcourseViewSets(viewsets.ModelViewSet):
-    queryset = Registrationcourse.objects.all()
-    serializer_class = RegistrationcourseSerializer
+class RegistrationCourseViewSets(viewsets.ModelViewSet):
+    queryset = RegistrationCourse.objects.all()
+    serializer_class = RegistrationCourseSerializer
 
 
 class HomeworkViewSets(viewsets.ModelViewSet):
@@ -46,6 +65,6 @@ class HomeworkViewSets(viewsets.ModelViewSet):
     serializer_class = HomeworkSerializer
 
 
-class PassingexamViewSets(viewsets.ModelViewSet):
-    queryset = Passingexam.objects.all()
-    serializer_class = PassingexamSerializer
+class PassingExamViewSets(viewsets.ModelViewSet):
+    queryset = PassingExam.objects.all()
+    serializer_class = PassingExamSerializer
